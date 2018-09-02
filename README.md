@@ -56,6 +56,6 @@ DATA_ROOT=./datasets/horse2zebra name=horse2zebra_model phase=test th test.lua
 ```
 
 ## BlaBla
-- My email: chenyang15@mails.tsinghua.edu.cn can't be used for sending emails because of my graduation, and it won't be able to receive email very soon(may be I have already missed some emails). So please contant me by cylily93@gmail.com.
-- In fact I didn't mean to clean up the code because of lazy  _(:з」∠)_, but after received several contact asking me about the reproduction, I decide to clean up them to avoid "rebuilding the wheel"
+- My email: chenyang15@mails.tsinghua.edu.cn can't be used for sending emails because of my graduation, and it won't be able to receive email very soon(may be I have already missed some emails). So please contact me by cylily93@gmail.com.
+- In fact I didn't mean to clean up the code before because of lazy  _(:з」∠)_, but after received several contact asking me about the reproduction, I decide to clean up them to avoid "rebuilding the wheel"
 - I hope this code can speed up your work ~
