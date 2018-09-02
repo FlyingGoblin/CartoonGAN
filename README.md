@@ -52,7 +52,7 @@ DATA_ROOT=./datasets/<your data> name=<your name> init_model=<path to your init 
 
 ## Test
 ```bash
-DATA_ROOT=./datasets/horse2zebra name=horse2zebra_model phase=test th test.lua
+DATA_ROOT=./datasets/<your test data> name=<your name> model=one_direction_test phase=test loadSize=256 fineSize=256 resize_or_crop="scale_width" th test.lua
 ```
 
 ## BlaBla
