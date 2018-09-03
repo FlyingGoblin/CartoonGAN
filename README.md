@@ -5,7 +5,7 @@ Torch implementation for [Yang Chen, Yu-Kun Lai, Yong-Jin Liu. CartoonGAN: Gener
 This code borrows from early version of [CycleGAN](https://github.com/junyanz/CycleGAN).
 
 ## Installation
-the same as [CycleGAN](https://github.com/junyanz/CycleGAN)
+The same as [CycleGAN](https://github.com/junyanz/CycleGAN)
 - Install torch and dependencies from https://github.com/torch/distro
 - Install torch packages `nngraph`, `class`, `display`
 ```bash
@@ -34,13 +34,13 @@ DATA_ROOT=./datasets/<your test data> name=Shinkai model=one_direction_test phas
 All the images in our paper are from CycleGAN: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix (XXX2photo).
 - For the Cartoon image:
 Because all the cartoon images are from films, I don't know if I have the right to upload them. I don't know if there will be any copyright problem, I am sorry.
-I just calculate the SSIM and PSNR between frames to remove too samiliar images.
-The cartoon dataset should not be too smail.
+    - I just calculate the SSIM and PSNR between frames to remove too samiliar images.
+    - The cartoon dataset should not be too small.
 
 
 ## Train
 - Dataset:
-Prepare your datasets in ./datasets/<your data>, it should have subfolders 'train_A', 'train_B', 'train_B_edge'
+Prepare your datasets in ./datasets/<your data>, it should have subfolders `train_A`, `train_B`, `train_B_edge`
 - Train a model with init process:
 ```bash
 DATA_ROOT=./datasets/<your data> name=<your name> th train.lua
@@ -56,6 +56,6 @@ DATA_ROOT=./datasets/<your test data> name=<your name> model=one_direction_test 
 ```
 
 ## BlaBla
-- My email: chenyang15@mails.tsinghua.edu.cn can't be used for sending emails because of my graduation, and it won't be able to receive email very soon(may be I have already missed some emails). So please contact me by cylily93@gmail.com.
-- In fact I didn't mean to clean up the code before because of lazy  _(:з」∠)_, but after received several contact asking me about the reproduction, I decide to clean up them to avoid "rebuilding the wheel"
+- My email: chenyang15@mails.tsinghua.edu.cn can NOT send emails because of my graduation, and it won't be able to receive email very soon (maybe I have already missed some emails). So please contact me by cylily93@gmail.com.
+- In fact I didn't mean to clean up the code before because of laziness  `_(:з」∠)_`, but after receiving several contact asking me about the reproduction, I decided to clean them up to avoid "rebuilding the wheel".
 - I hope this code can speed up your work ~
