@@ -4,11 +4,11 @@ local content = {}
 
 function content.defineVGG(content_layer)
   local contentFunc = nn.Sequential()
-  --require 'loadcaffe'
+  require 'loadcaffe'
   require 'util/VGG_preprocess'
-  --cnn = loadcaffe.load('VGG_ILSVRC_19_layers_deploy.prototxt', 'VGG_ILSVRC_19_layers.caffemodel', 'cudnn')
-  require 'cudnn'
-  cnn = torch.load('./VGG_ILSVRC_19_layers.t7')
+  cnn = loadcaffe.load('VGG_ILSVRC_19_layers_deploy.prototxt', 'VGG_ILSVRC_19_layers.caffemodel', 'cudnn')
+  --require 'cudnn'
+  --cnn = torch.load('./VGG_ILSVRC_19_layers.t7')
 
   contentFunc:add(nn.SpatialUpSamplingBilinear({oheight=224, owidth=224}))
   contentFunc:add(nn.VGG_postprocess())
