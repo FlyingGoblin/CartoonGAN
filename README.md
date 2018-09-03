@@ -5,7 +5,7 @@ Torch implementation for [Yang Chen, Yu-Kun Lai, Yong-Jin Liu. CartoonGAN: Gener
 This code borrows from early version of [CycleGAN](https://github.com/junyanz/CycleGAN).
 
 ## Installation
-the same as [CycleGAN](https://github.com/junyanz/CycleGAN)
+The same as [CycleGAN](https://github.com/junyanz/CycleGAN)
 - Install torch and dependencies from https://github.com/torch/distro
 - Install torch packages `nngraph`, `class`, `display`
 ```bash
