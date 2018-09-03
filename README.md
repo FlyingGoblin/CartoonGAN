@@ -51,6 +51,8 @@ DATA_ROOT=./datasets/<your data> name=<your name> init_model=<path to your init 
 ```
 
 ## Test
+- Dataset:
+Prepare your datasets in ./datasets/<your test data>, it should have subfolders `test_A`
 ```bash
 DATA_ROOT=./datasets/<your test data> name=<your name> model=one_direction_test phase=test loadSize=256 fineSize=256 resize_or_crop="scale_width" th test.lua
 ```
