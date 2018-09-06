@@ -44,7 +44,7 @@ local opt_train = {
    which_model_netG = 'resnet_nblocks',   -- selects model to use for netG
    norm = 'instance',             -- batch or instance normalization
    n_layers_D = 3,                -- n in which_model_netD=='n_layers'
-   n_block_G = 16,                -- n in which_model_netG = 'resnet_nblocks'
+   n_block_G = 8,                -- n in which_model_netG = 'resnet_nblocks'
    content_loss = 'vgg',        -- content loss type: L1, conv-layer, edge
    layer_name = 'conv4_4',          -- layer used in content loss
    lambda_A = 10.0,               -- weight for contant loss & weight for cycle loss (A -> B -> A) cycle_gan
