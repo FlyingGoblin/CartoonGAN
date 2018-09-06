@@ -282,14 +282,14 @@ function defineG_convresnet_nblocks(input_nc, output_nc, ngf, nblock)
   local p = (f - 1) / 2
   local data = -nn.Identity()
   local e1 = data - nn.SpatialReflectionPadding(p, p, p, p) - nn.SpatialConvolution(input_nc, ngf, f, f, 1, 1) - normalization(ngf) - nn.ReLU(ture)
-  local e2 = e1 - nn.SpatialConvolution(ngf, ngf*2, ks, ks, 2, 2, 1, 1) - nn.SpatialConvolution(ngf*2, ngf*2, ks, ks, 2, 2, 1, 1) - normalization(ngf*2) - nn.ReLU(ture)
-  local e3 = e2 - nn.SpatialConvolution(ngf*2, ngf*4, ks, ks, 2, 2, 1, 1) - nn.SpatialConvolution(ngf*4, ngf*4, ks, ks, 2, 2, 1, 1) - normalization(ngf*4) - nn.ReLU(ture)
+  local e2 = e1 - nn.SpatialConvolution(ngf, ngf*2, ks, ks, 2, 2, 1, 1) - nn.SpatialConvolution(ngf*2, ngf*2, ks, ks, 1, 1, 1, 1) - normalization(ngf*2) - nn.ReLU(ture)
+  local e3 = e2 - nn.SpatialConvolution(ngf*2, ngf*4, ks, ks, 2, 2, 1, 1) - nn.SpatialConvolution(ngf*4, ngf*4, ks, ks, 1, 1, 1, 1) - normalization(ngf*4) - nn.ReLU(ture)
   local d1 = e3
   for i =1, nblock do
     d1 = d1 - build_res_block(ngf*4, padding_type)
   end
-  local d2 = d1 - nn.SpatialFullConvolution(ngf*4, ngf*2, ks, ks, 2, 2, 1, 1,1,1) - nn.SpatialFullConvolution(ngf*2, ngf*2, ks, ks, 2, 2, 1, 1,1,1) - normalization(ngf*2) - nn.ReLU(ture)
-  local d3 = d2 - nn.SpatialFullConvolution(ngf*2, ngf, ks, ks, 2, 2, 1, 1,1,1) - nn.SpatialFullConvolution(ngf, ngf, ks, ks, 2, 2, 1, 1,1,1) - normalization(ngf) - nn.ReLU(ture)
+  local d2 = d1 - nn.SpatialFullConvolution(ngf*4, ngf*2, ks, ks, 2, 2, 1, 1, 1, 1) - nn.SpatialConvolution(ngf*2, ngf*2, ks, ks, 1, 1, 1, 1) - normalization(ngf*2) - nn.ReLU(ture)
+  local d3 = d2 - nn.SpatialFullConvolution(ngf*2, ngf, ks, ks, 2, 2, 1, 1, 1, 1) - nn.SpatialConvolution(ngf, ngf, ks, ks, 1, 1, 1, 1) - normalization(ngf) - nn.ReLU(ture)
   local d4 = d3 - nn.SpatialReflectionPadding(p, p, p, p) - nn.SpatialConvolution(ngf, output_nc, f, f, 1, 1) - nn.Tanh()
   netG = nn.gModule({data},{d4})
   return netG
