@@ -1,5 +1,3 @@
-# Notice!!!!
-I am sorry I find that the code is wrong now T^T. I am checking the new code, please don't use this code now.
 
 # CartoonGAN
 
